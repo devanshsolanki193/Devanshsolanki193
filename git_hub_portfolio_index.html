@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Devansh Solanki — Marketing Portfolio</title>
+  <meta name="description" content="Marketing & growth portfolio: case studies, projects, and writing by Devansh Solanki." />
+  <meta property="og:title" content="Devansh Solanki — Marketing Portfolio" />
+  <meta property="og:description" content="Marketing & growth portfolio: case studies, projects, and writing by Devansh Solanki." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    :root{
+      --bg: #0b0c10;
+      --card: #111318;
+      --muted: #9aa4af;
+      --text: #e8edf2;
+      --brand: #0ea5e9; /* sky-500 */
+      --accent: #22c55e; /* green-500 */
+      --ring: rgba(14,165,233,.35);
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    .light{
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --muted: #4b5563;
+      --text: #0f172a;
+      --brand: #0369a1; /* sky-800 */
+      --accent: #15803d;
+      --ring: rgba(3,105,161,.2);
+      --shadow: 0 10px 25px rgba(2,6,23,.12);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg); color: var(--text);
+      line-height:1.6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px; padding:24px; margin:0 auto}
+    header{position:sticky; top:0; z-index:10; backdrop-filter:saturate(160%) blur(8px); background:color-mix(in srgb, var(--bg) 70%, transparent); border-bottom:1px solid color-mix(in srgb, var(--muted) 20%, transparent)}
+    nav{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .nav-links{display:flex; gap:18px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid color-mix(in srgb, var(--brand) 40%, var(--text) 10%);
+      background:linear-gradient(180deg, color-mix(in srgb, var(--card) 90%, transparent), color-mix(in srgb, var(--card) 80%, transparent));
+      box-shadow: var(--shadow);
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 16px 35px rgba(0,0,0,.35)}
+    .btn.outline{background:transparent}
+    .tag{font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid color-mix(in srgb, var(--muted) 35%, transparent); color:var(--muted)}
+    .hero{display:grid; grid-template-columns:1.3fr 1fr; gap:28px; align-items:center; padding:48px 0}
+    .hero h1{font-size: clamp(28px, 4vw, 48px); line-height:1.15; margin:8px 0}
+    .hero p{font-size: clamp(16px, 2vw, 18px); color:var(--muted)}
+    .grid{display:grid; gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3, minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns:repeat(2, minmax(0,1fr))}
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} .grid.cols-3,.grid.cols-2{grid-template-columns:1fr} }
+    .card{background:var(--card); border-radius:18px; padding:18px; border:1px solid color-mix(in srgb, var(--muted) 22%, transparent); box-shadow:var(--shadow)}
+    .card h3{margin:6px 0 8px}
+    .kpi{display:flex; align-items:center; gap:8px; font-weight:600}
+    .kpi span{color:var(--accent)}
+    .section{padding:20px 0 8px}
+    .section h2{font-size: clamp(20px, 3vw, 28px); margin:0 0 10px}
+    .pill{display:inline-flex; align-items:center; gap:6px; padding:6px 10px; background: color-mix(in srgb, var(--brand) 8%, transparent); border:1px solid color-mix(in srgb, var(--brand) 25%, transparent); border-radius:999px; font-size:12px}
+    .footer{padding:40px 0; color:var(--muted); font-size:14px}
+    .projects .card:hover{outline:2px solid var(--brand); outline-offset:2px}
+    .avatar{width:100%; aspect-ratio:1/1; border-radius:18px; object-fit:cover; border:1px solid color-mix(in srgb, var(--muted) 20%, transparent)}
+    .socials{display:flex; gap:10px; flex-wrap:wrap}
+    .muted{color:var(--muted)}
+    .list{display:grid; gap:12px}
+    .list a{display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-radius:12px; background:var(--card); border:1px solid color-mix(in srgb, var(--muted) 22%, transparent)}
+    .chip{font-size:12px; color:var(--muted)}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+    dialog{border:none; border-radius:16px; width:min(720px, 92vw); background:var(--card); color:var(--text); padding:0; box-shadow:var(--shadow); border:1px solid color-mix(in srgb, var(--muted) 22%, transparent)}
+    dialog header{padding:18px; border-bottom:1px solid color-mix(in srgb, var(--muted) 18%, transparent)}
+    dialog .content{padding:18px}
+    dialog .actions{display:flex; justify-content:flex-end; gap:10px; padding:16px; border-top:1px solid color-mix(in srgb, var(--muted) 18%, transparent)}
+    .icon{width:18px; height:18px; display:inline-block}
+    .repo{display:flex; gap:10px; align-items:center}
+    .repo-list{display:grid; gap:12px}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; background: color-mix(in srgb, var(--muted) 20%, transparent); padding:2px 6px; border-radius:6px; font-size:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div style="display:flex; align-items:center; gap:10px">
+          <strong>DS</strong>
+          <span class="tag">Marketing • Growth • CRM</span>
+        </div>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#case-studies">Case Studies</a>
+          <a href="#writing">Writing</a>
+          <a href="#contact">Contact</a>
+          <button class="btn outline" id="themeToggle" aria-label="Toggle theme">🌓 Theme</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div>
+        <span class="pill">Open to roles: Marketing • Growth • BD</span>
+        <h1>Hi, I'm <span style="color:var(--brand)">Devansh Solanki</span> — I turn insights into outcomes.</h1>
+        <p>Marketing specialist focused on data‑backed storytelling, CRM journeys, and conversion. I design experiments, build funnels, and ship campaigns that move the needle.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn outline" href="./Devansh_Solanki_Resume.pdf" download>Download Résumé</a>
+        </div>
+        <div class="socials" style="margin-top:14px">
+          <a class="pill" href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="pill" href="https://www.linkedin.com/in/USERNAME" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="pill" href="mailto:you@example.com">Email</a>
+        </div>
+      </div>
+      <div>
+        <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop" alt="Portrait placeholder" />
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS / KPIs -->
+    <section class="grid cols-3 section" aria-label="Highlights">
+      <div class="card kpi">📈 <span>+32%</span> CTR uplift via subject-line test & journey timing</div>
+      <div class="card kpi">🛒 <span>+18%</span> conversion from landing-page copy revamp</div>
+      <div class="card kpi">🤝 <span>98%</span> enterprise client retention (Reliance)</div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+      <h2>Selected Projects</h2>
+      <div class="grid cols-3">
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="tag">Email Automation</div>
+          <h3>Triggered Onboarding for PC Optimum</h3>
+          <p class="muted">Mapped customer journey, launched triggered flows, and optimized touchpoints with A/B testing across 180k users.</p>
+          <ul class="muted" style="margin:8px 0 12px; padding-left:18px">
+            <li>+11.6% uplift in activation (control vs variant B)</li>
+            <li>3.2pp improvement in repeat-purchase within 30 days</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap">
+            <button class="btn" data-open="cs1">View Case Study</button>
+            <a class="btn outline" href="https://github.com/USERNAME/pc-optimum-onboarding" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="tag">Growth Experiments</div>
+          <h3>White Claw Zero — Kitchener Launch</h3>
+          <p class="muted">Built geo‑targeted paid + retail POP + creator seeding plan. Modeled CAC/LTV scenarios and channel mix.</p>
+          <ul class="muted" style="margin:8px 0 12px; padding-left:18px">
+            <li>Hypothesized +25% aided awareness in 6 weeks</li>
+            <li>Dashboard to track MMM‑lite & incrementality</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap">
+            <button class="btn" data-open="cs2">View Case Study</button>
+            <a class="btn outline" href="https://github.com/USERNAME/whiteclaw-kitchener-imc" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="card">
+          <div class="tag">CRO</div>
+          <h3>Buhi Backpack Landing Page</h3>
+          <p class="muted">Rewrote value props, added social proof heat‑spots, and simplified checkout path.</p>
+          <ul class="muted" style="margin:8px 0 12px; padding-left:18px">
+            <li>+18% add‑to‑cart; -12% bounce</li>
+            <li>Tested hero variants with copy & imagery swaps</li>
+          </ul>
+          <div style="display:flex; gap:8px; flex-wrap:wrap">
+            <button class="btn" data-open="cs3">View Case Study</button>
+            <a class="btn outline" href="https://github.com/USERNAME/buhi-landing-page" target="_blank" rel="noopener">View Repo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CASE STUDY MODALS -->
+    <dialog id="cs1" aria-labelledby="cs1-title">
+      <header><h3 id="cs1-title">PC Optimum — Triggered Onboarding</h3></header>
+      <div class="content">
+        <p><strong>Context:</strong> New users weren’t activating fast enough post‑signup. We suspected misaligned timing and too‑generic value props.</p>
+        <p><strong>Approach:</strong> Audience clustering by recency/frequency; 4‑email flow with dynamic content; send‑time tests; subject‑line variants tested with chi‑square significance.</p>
+        <p><strong>Outcomes:</strong> +11.6% activation; +32% CTR; statistically significant at p < .05.</p>
+        <p class="muted">Stack: Klaviyo, GA4, BigQuery, Python (uplift calc).</p>
+      </div>
+      <div class="actions"><button class="btn outline" data-close>Close</button></div>
+    </dialog>
+
+    <dialog id="cs2" aria-labelledby="cs2-title">
+      <header><h3 id="cs2-title">White Claw Zero — Kitchener Launch</h3></header>
+      <div class="content">
+        <p><strong>Context:</strong> New zero‑alcohol SKU with localized launch.</p>
+        <p><strong>Approach:</strong> MMM‑lite model to guide channel split; geo‑fenced paid; UGC creator whitelisting; retail POP; sampling.
+        </p>
+        <p><strong>Outcomes (modeled):</strong> +25% aided awareness; +8% baseline lift in trial.</p>
+      </div>
+      <div class="actions"><button class="btn outline" data-close>Close</button></div>
+    </dialog>
+
+    <dialog id="cs3" aria-labelledby="cs3-title">
+      <header><h3 id="cs3-title">Buhi — Landing Page CRO</h3></header>
+      <div class="content">
+        <p><strong>Approach:</strong> Heuristic review, scroll‑map read, clarity‑first copy, friction removal, guarantee + returns prominence.</p>
+        <p><strong>Outcome:</strong> +18% ATC, -12% bounce over 28 days.</p>
+      </div>
+      <div class="actions"><button class="btn outline" data-close>Close</button></div>
+    </dialog>
+
+    <!-- GITHUB REPOS (optional auto) -->
+    <section class="section" id="repos">
+      <h2>Code & Assets</h2>
+      <p class="muted">Auto‑pull recent public repos from GitHub (optional). Replace <span class="kbd">GITHUB_USERNAME</span> below.</p>
+      <div class="repo-list" id="repoList" role="list"></div>
+    </section>
+
+    <!-- WRITING -->
+    <section id="writing" class="section">
+      <h2>Writing & Talks</h2>
+      <div class="list">
+        <a href="#" target="_blank" rel="noopener">
+          <span>Case teardown: Sephora x WNBA — values‑led partnerships that convert</span>
+          <span class="chip">Article</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener">
+          <span>From hypotheses to impact: a practical MMM‑lite for small budgets</span>
+          <span class="chip">Thread</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener">
+          <span>Five retention plays you can ship in a week</span>
+          <span class="chip">Post</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <h2>Focus & Toolbox</h2>
+      <div class="grid cols-3">
+        <div class="card"><strong>Growth</strong><br/><span class="muted">Experiment design, funnel analytics, MMM‑lite</span></div>
+        <div class="card"><strong>CRM</strong><br/><span class="muted">Klaviyo, HubSpot, GA4, segmentation, triggered flows</span></div>
+        <div class="card"><strong>CRO & Content</strong><br/><span class="muted">Messaging, LPs, UGC, A/B testing</span></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Open to roles and collaborations. Based in Toronto, open to remote.</p>
+        <p><a class="btn" href="mailto:you@example.com">Email Me</a></p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container" style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap">
+        <span>© <span id="year"></span> Devansh Solanki</span>
+        <span class="muted">Built with vanilla HTML/CSS/JS • <span class="kbd">gh-pages</span> ready</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // ---- Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ---- Theme toggle (persisted)
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if(savedTheme === 'light'){ root.classList.add('light'); }
+    document.getElementById('themeToggle').addEventListener('click', ()=>{
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+    });
+
+    // ---- Dialog open/close
+    document.querySelectorAll('[data-open]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const id = btn.getAttribute('data-open');
+        document.getElementById(id).showModal();
+      });
+    });
+    document.querySelectorAll('dialog [data-close]').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        btn.closest('dialog').close();
+      });
+    });
+
+    // ---- Optional: Load recent GitHub repos
+    async function loadRepos(){
+      const USER = 'GITHUB_USERNAME'; // <-- replace with your username
+      if(USER === 'GITHUB_USERNAME') return; // keep off until configured
+      try{
+        const res = await fetch(`https://api.github.com/users/${USER}/repos?sort=updated&per_page=6`);
+        const data = await res.json();
+        const list = document.getElementById('repoList');
+        list.innerHTML = '';
+        data.forEach(r=>{
+          const a = document.createElement('a');
+          a.className = 'card repo';
+          a.href = r.html_url; a.target = '_blank'; a.rel = 'noopener';
+          a.innerHTML = `
+            <span class="icon">📦</span>
+            <div>
+              <strong>${r.name}</strong>
+              <div class="muted">${r.description || 'No description'}</div>
+            </div>
+            <span class="chip">★ ${r.stargazers_count}</span>
+          `;
+          list.appendChild(a);
+        });
+      }catch(e){
+        console.warn('GitHub API error', e);
+      }
+    }
+    loadRepos();
+  </script>
+</body>
+</html>
